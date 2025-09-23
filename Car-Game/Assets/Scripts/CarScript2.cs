@@ -1,5 +1,5 @@
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Animations;
 
 public class CarScript2 : MonoBehaviour
 {
@@ -22,20 +22,20 @@ public class CarScript2 : MonoBehaviour
         {
             speedInput = Input.GetAxis("Vertical") * forwardAccel * 1000;
         }
-        else if (Input.GetAxis("Vertical") < 0) 
+        else if (Input.GetAxis("Vertical") < 0)
         {
             speedInput = Input.GetAxis("Vertical") * reverseAccel * 1000;
         }
 
+
         turnInput = Input.GetAxis("Horizontal");
 
+        
 
 
+       //old code
+       //transform.position = carRB.transform.position;
 
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime, 0f));
-
-
-        transform.position = carRB.transform.position;
     }
 
 
@@ -46,8 +46,13 @@ public class CarScript2 : MonoBehaviour
             carRB.AddForce(transform.forward * speedInput);
         }
 
+
+        // rotates car rigidbody using quaternion
+        if (Mathf.Abs(turnInput) > 0)
+        {
+            carRB.MoveRotation(carRB.rotation * Quaternion.Euler(0f, turnInput * turnStrength * Time.fixedDeltaTime, 0f));
+        }
+
     }
-
-
 
 }
