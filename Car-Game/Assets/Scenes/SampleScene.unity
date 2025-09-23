@@ -2326,9 +2326,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carRB: {fileID: 919132148583872014}
   forwardAccel: 100
-  reverseAccel: 100
+  reverseAccel: 50
   maxSpeed: 200
-  turnStrength: 100
+  turnStrength: 95
 --- !u!65 &919132148583872013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2358,12 +2358,12 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148583872011}
   serializedVersion: 5
-  m_Mass: 800
-  m_LinearDamping: 1.5
-  m_AngularDamping: 4
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_Mass: 1500
+  m_LinearDamping: 1
+  m_AngularDamping: 30
+  m_CenterOfMass: {x: 0, y: 0, z: -5}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_InertiaRotation: {x: 0.00880202, y: 0.008649721, z: 0.008649721, w: 0.9998864}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
